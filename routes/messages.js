@@ -1,16 +1,18 @@
-import express from 'express'
-import {list, show, create, update, destroy} from '../controllers/api/v1/messages.js'
+import express from 'express';
+import {
+    list,
+    show,
+    create,
+    update,
+    destroy
+} from '../controllers/api/v1/messages.js';
 
-const router = express.Router()
+const router = express.Router();
 
-/* GET messages listing. */
-router.get('/', list)
-  
-router.get('/:id', show)
+router.get('/', list);
+router.get('/:id', show);
+router.post('/', create);
+router.put('/:id', update);
+router.delete('/:id', destroy);
 
-router.post('/', create)
-
-router.put('/:id', update)
-
-router.delete('/:id', destroy)
-export default router
+export default router;
